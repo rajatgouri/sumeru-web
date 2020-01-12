@@ -1,0 +1,37 @@
+<div id="Create_sales_view_content" style="display: none">
+    <div class="row">
+        <div class="form-group col-md-12">
+            <label class="sr-only-focusable" for="c_sm_fname">First Name: *</label>
+            <input required="" type="text" class="form-control" id="c_sm_fname" placeholder="First Name">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-12">
+            <label class="sr-only-focusable" for="c_sm_lname">Last Name: *</label>
+            <input required="" type="text" class="form-control" id="c_sm_lname" placeholder="Last Name">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-12">
+            <label class="sr-only-focusable" for="c_sm_phone">Phone: *</label>
+            <input required="" type="text" class="form-control" id="c_sm_phone" placeholder="Phone">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-12">
+            <label class="sr-only-focusable" for="c_sm_pwd">Password: *</label>
+            <input required="" type="text" class="form-control" id="c_sm_pwd" placeholder="Password">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-12">
+            <label class="sr-only-focusable" for="c_sm_mkt">Market: *</label>
+            <select style="margin-top: .4rem;" id="c_sm_mkt" class="form-control">
+                <option value="">Select Market</option>
+                <% for (var i = 0 ; i < markets.length; i++){%>
+                <option value="<%= markets[i].name %>" data-code="<%= markets[i].mkid %>"><%= markets[i].name %></option>
+                <%}%>
+            </select>
+        </div>
+    </div>
+</div>

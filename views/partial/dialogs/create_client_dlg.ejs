@@ -1,0 +1,59 @@
+<div id="Create_client_view_content" style="display: none">
+    <div class="row">
+        <div class="form-group col-md-12">
+            <label class="sr-only-focusable" for="c_clnt_name">Client Name: *</label>
+            <input required="" type="text" class="form-control" id="c_clnt_name" placeholder="Client Name">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-12">
+            <label class="sr-only-focusable" for="c_clnt_business">Client Business: *</label>
+            <input required="" type="text" class="form-control" id="c_clnt_business" placeholder="Client Business ">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label class="sr-only-focusable" for="c_clnt_adhar">Client Aadhar No: *</label>
+            <input required="" type="text" class="form-control" id="c_clnt_adhar" placeholder="Client Aadhar No.">
+        </div>
+        <div class="form-group col-md-6">
+            <label class="sr-only-focusable" for="c_clnt_pencard">Client Pan Card: *</label>
+            <input required="" type="text" class="form-control" id="c_clnt_pencard" placeholder="Client Pan Card">
+        </div>
+    </div>
+    <!-- <div class="row">
+        <div class="form-group col-md-12">
+            <label class="sr-only-focusable" for="c_clnt_pencard">Client Pen Card: *</label>
+            <input required="" type="text" class="form-control" id="c_clnt_pencard" placeholder="Client Pen Card">
+        </div>
+    </div> -->
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label class="sr-only-focusable" for="c_clnt_phone">Client Phone No: *</label>
+            <input required="" type="text" class="form-control" id="c_clnt_phone" placeholder="Client Phone No">
+        </div>
+        <div class="form-group col-md-6">
+            <label class="sr-only-focusable" for="c_clnt_password">Client Password: *</label>
+            <input required="" type="text" class="form-control" id="c_clnt_password" placeholder="Client Password">
+        </div>
+    </div>
+    <!-- <div class="row">
+        <div class="form-group col-md-12">
+            <label class="sr-only-focusable" for="c_clnt_password">Client Password: *</label>
+            <input required="" type="text" class="form-control" id="c_clnt_password" placeholder="Client Password">
+        </div>
+    </div> -->
+    
+    <div class="row">
+        <div class="form-group col-md-12">
+            <label class="sr-only-focusable" for="c_clnt_mkt">Market: *</label>
+            <select style="margin-top: .4rem;" id="c_clnt_mkt" class="form-control">
+                <option value="">Select Market</option>
+                <% for (var i = 0 ; i < markets.length; i++){%>
+                <option value="<%= markets[i].name %>" data-code="<%= markets[i].mkid %>"><%= markets[i].name %></option>
+                <%}%>
+            </select>
+        </div>
+    </div>
+    
+</div>

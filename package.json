@@ -1,0 +1,42 @@
+{
+  "name": "sumeruweb",
+  "version": "1.0.0",
+  "description": "Soap management project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devilaark2018/SumeruWeb.git"
+  },
+  "keywords": [
+    "Management",
+    "CRM",
+    "SRM"
+  ],
+  "author": "AARK tech Hub",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "1.18.10"
+  },
+  "bugs": {
+    "url": "https://github.com/devilaark2018/SumeruWeb/issues"
+  },
+  "homepage": "https://github.com/devilaark2018/SumeruWeb#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "csv-writer": "^1.4.0",
+    "dateformat": "^3.0.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-ejs-layouts": "^2.5.0",
+    "express-session": "^1.16.1",
+    "lodash": "^4.17.11",
+    "nodemailer": "^6.1.1",
+    "request": "^2.88.0",
+    "session-file-store": "^1.2.0",
+    "uniqid": "^5.0.3"
+  }
+}

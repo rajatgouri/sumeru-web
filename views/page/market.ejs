@@ -1,0 +1,118 @@
+<body>
+        <!-- Sidenav -->
+        <% include ../partial/sidebar %>
+        <!-- Main content -->
+        <div class="main-content">
+          <!-- Top navbar -->
+          <% include ../partial/navbar %>
+          <!-- Header -->
+          <% include ../partial/header %>
+          <!-- Page content -->
+          <div class="container-fluid mt--7">
+            
+            <div class="row mt-5" style="min-height:500px">
+                 <!-- orders model-->
+                 <div class="col-xl-12 mb-5 mb-xl-0">
+                  <div style="max-height:390px;height:390px; overflow-y:auto;" class="card shadow">
+                    <div class="card-header border-0">
+                      <div class="row align-items-center">
+                        <div class="col">
+                          <h3 class="mb-0"><i class="fas fa-sync-alt fa-reload-custom" onclick="client_js.reloadClient()"></i>
+                            Market
+                                <div class="dropdown">
+                                    <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i style="color:#5e63bb" class="fas fa-ellipsis-v"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                        <a class="dropdown-item" href="#" onclick="">Download List</a>
+                                        <!-- <a class="dropdown-item" href="#">Add New Market</a> -->
+                                        <a class="dropdown-item" href="#" onclick="Utils.getView('Create_market_view_content','market_createModel');$('#market_createModel').modal('show');">Add New Market</a>
+                                    </div>
+                                </div>
+                          </h3>
+                        </div>
+                        <%# <div class="col text-right">
+                          <button class="btn btn-sm btn-primary" data-target="#myclient_createModel" data-toggle = "modal" onclick = "Utils.getView('Client_view_content','myclient_createModel');setup_create();">Add new</button>
+                          
+                        </div> %>
+                      </div>
+                    </div>
+                    <div class="table-responsive" id="client_table">
+                            
+        
+                      <!-- Projects table -->
+                      <table class="table align-items-center table-flush">
+                        <thead class="thead-light">
+                          <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Number of Orders</th>
+                            <th scope="col">Phone Number</th>
+                            <th scope="col"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        <% for (var i = 0 ; i < clients.length; i++){%>
+                        <tr>
+                            <th scope="row">
+                            <%= clients[i].c_name %>
+                            </th>
+                            <td>
+                            <%= clients[i].c_gst%>
+                            </td>
+                            <td>
+                            <%= clients[i].num_bill%>
+                            </td>
+                            <td class="text-right">
+                                <div class="dropdown">
+                                    <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i style="color:#f47532" class="fas fa-ellipsis-v"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                        <a class="dropdown-item" href="#" onclick="client_js.client_detail(<%= clients[i].c_id%>);Utils.getView('Client_edit_view_content','myclient_createModel');$('#myclient_createModel').modal('show');">Edit</a>
+                                        <a class="dropdown-item" href="#">Detail</a>
+                                    </div>
+                                </div>
+                            </td>
+                        <%}%>
+        
+        
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+            </div>
+      
+      
+      
+      
+           
+            <!-- Footer -->
+            <% include ../partial/footer %>
+          </div>
+        </div>
+        <!-- Include scripts -->
+
+        
+<% include ../partial/dialogs/create_market_dlg %>
+
+<div class="modal fade" id="market_createModel" role="dialog" tabindex="-1" aria-labelledby="myModelLabel" aria-hidden="true">
+  <div class="modal-dialog  modal-dialog-centered"  role="document">
+     <div class="modal-content">
+         <div class="modal-header">
+             <h4 class="modal-title">New Market</h4>
+             <button type="button" onclick="Utils.emptydlg('market_createModel')" class="close" data-dismiss="modal">&times;</button>
+         </div>
+         <div class="modal-body">
+         </div>
+         <div class="modal-footer">
+             <button type="button" onclick="Utils.emptydlg('market_createModel')" class="btn btn-default" data-dismiss="modal">Close</button>
+             <button type="button" class="btn btn-primary" id="modal_action_btn" onclick="client_js.create_client();">Save changes</button>
+         </div>
+     </div>
+  </div>
+ </div>
+ 
+         
+      
+          <% include ../partial/scripts %>

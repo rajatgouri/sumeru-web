@@ -1,0 +1,284 @@
+<body>
+  <!-- Sidenav -->
+  <% include ../partial/sidebar %>
+  <!-- Main content -->
+  <div class="main-content">
+    <!-- Top navbar -->
+    <% include ../partial/navbar %>
+    <!-- Header -->
+    <% include ../partial/header %>
+    <!-- Page content -->
+    <div class="container-fluid mt--7">
+      
+      <div class="row mt-5" style="min-height:500px">
+           <!-- Client model-->
+ 
+        <div class="col-xl-6 mb-5 mb-xl-0">
+          <div style="max-height:390px;height:390px; overflow-y:auto;" class="card shadow">
+            <div class="card-header border-0">
+              <div class="row align-items-center">
+                <div class="col">
+                  <h3 class="mb-0"><i class="fas fa-sync-alt fa-reload-custom" onclick="client_js.reloadClient()"></i>
+                    Sales men
+                        <div class="dropdown">
+                            <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i style="color:#5e63bb" class="fas fa-ellipsis-v"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                <a class="dropdown-item" href="#" onclick="">Download List</a>
+                                <a class="dropdown-item" href="#">Add New Sales man</a>
+                            </div>
+                        </div>
+                  </h3>
+                </div>
+                <%# <div class="col text-right">
+                  <button class="btn btn-sm btn-primary" data-target="#myclient_createModel" data-toggle = "modal" onclick = "Utils.getView('Client_view_content','myclient_createModel');setup_create();">Add new</button>
+                  
+                </div> %>
+              </div>
+            </div>
+            <div class="table-responsive" id="client_table">
+                    
+
+              <!-- Projects table -->
+              <table class="table align-items-center table-flush">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Number of Orders</th>
+                    <th scope="col">Phone Number</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                <% for (var i = 0 ; i < clients.length; i++){%>
+                <tr>
+                    <th scope="row">
+                    <%= clients[i].c_name %>
+                    </th>
+                    <td>
+                    <%= clients[i].c_gst%>
+                    </td>
+                    <td>
+                    <%= clients[i].num_bill%>
+                    </td>
+                    <td class="text-right">
+                        <div class="dropdown">
+                            <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i style="color:#f47532" class="fas fa-ellipsis-v"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                <a class="dropdown-item" href="#" onclick="client_js.client_detail(<%= clients[i].c_id%>);Utils.getView('Client_edit_view_content','myclient_createModel');$('#myclient_createModel').modal('show');">Edit</a>
+                                <a class="dropdown-item" href="#">Detail</a>
+                            </div>
+                        </div>
+                    </td>
+                <%}%>
+
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 mb-5 mb-xl-0">
+          <div style="max-height:390px;height:390px; overflow-y:auto;" class="card shadow">
+            <div class="card-header border-0">
+              <div class="row align-items-center">
+                <div class="col">
+                  <h3 class="mb-0"><i class="fas fa-sync-alt fa-reload-custom" onclick="client_js.reloadClient()"></i>
+                    Orders
+                        <div class="dropdown">
+                            <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i style="color:#5e63bb" class="fas fa-ellipsis-v"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                <a class="dropdown-item" href="#" onclick="">Download List</a>
+                                <a class="dropdown-item" href="#">Add New Sales man</a>
+                            </div>
+                        </div>
+                  </h3>
+                </div>
+                <%# <div class="col text-right">
+                  <button class="btn btn-sm btn-primary" data-target="#myclient_createModel" data-toggle = "modal" onclick = "Utils.getView('Client_view_content','myclient_createModel');setup_create();">Add new</button>
+                  
+                </div> %>
+              </div>
+            </div>
+            <div class="table-responsive" id="client_table">
+                    
+
+              <!-- Projects table -->
+              <table class="table align-items-center table-flush">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col">Client name</th>
+                    <th scope="col">Sales men</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <% for (var i = 0 ; i < clients.length; i++){%>
+                <tr>
+                    <th scope="row">
+                    <%= clients[i].c_name %>
+                    </th>
+                    <td>
+                    <%= clients[i].c_gst%>
+                    </td>
+                    <td>
+                    <%= clients[i].num_bill%>
+                    </td>
+                    <td class="text-right">
+                        <div class="dropdown">
+                            <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i style="color:#f47532" class="fas fa-ellipsis-v"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                <a class="dropdown-item" href="#" onclick="client_js.client_detail(<%= clients[i].c_id%>);Utils.getView('Client_edit_view_content','myclient_createModel');$('#myclient_createModel').modal('show');">Edit</a>
+                                <a class="dropdown-item" href="#">Detail</a>
+                            </div>
+                        </div>
+                    </td>
+                <%}%>
+
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+<!--
+        <div class="col-xl-4">
+          <div class="card shadow">
+            <div class="card-header border-0">
+              <div class="row align-items-center">
+                <div class="col">
+                  <h3 class="mb-0">Social traffic</h3>
+                </div>
+                <div class="col text-right">
+                  <a href="#!" class="btn btn-sm btn-primary">See all</a>
+                </div>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <!-- Projects table 
+              <table class="table align-items-center table-flush">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col">Referral</th>
+                    <th scope="col">Visitors</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">
+                      Facebook
+                    </th>
+                    <td>
+                      1,480
+                    </td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <span class="mr-2">60%</span>
+                        <div>
+                          <div class="progress">
+                            <div class="progress-bar bg-gradient-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      Facebook
+                    </th>
+                    <td>
+                      5,480
+                    </td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <span class="mr-2">70%</span>
+                        <div>
+                          <div class="progress">
+                            <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      Google
+                    </th>
+                    <td>
+                      4,807
+                    </td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <span class="mr-2">80%</span>
+                        <div>
+                          <div class="progress">
+                            <div class="progress-bar bg-gradient-primary" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      Instagram
+                    </th>
+                    <td>
+                      3,678
+                    </td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <span class="mr-2">75%</span>
+                        <div>
+                          <div class="progress">
+                            <div class="progress-bar bg-gradient-info" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      twitter
+                    </th>
+                    <td>
+                      2,645
+                    </td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <span class="mr-2">30%</span>
+                        <div>
+                          <div class="progress">
+                            <div class="progress-bar bg-gradient-warning" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%;"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>-->
+      </div>
+
+
+
+
+     
+      <!-- Footer -->
+      <% include ../partial/footer %>
+    </div>
+  </div>
+  <!-- Include scripts -->
+
+    <% include ../partial/scripts %>
