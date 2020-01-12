@@ -16,7 +16,7 @@
     "CRM",
     "SRM"
   ],
-  "author": "AARK tech Hub",
+  "author": "rajat gouri",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "1.18.10"
